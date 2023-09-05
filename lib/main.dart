@@ -28,6 +28,7 @@ class DigicelAppBar extends StatelessWidget {
       // elevation: 0.0,
       title: Row(
         children: [
+
           SvgPicture.asset(
             'assets/mydigicel.svg',
             height: 20.0,
