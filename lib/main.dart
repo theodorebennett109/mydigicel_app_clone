@@ -51,9 +51,9 @@ class DigicelAppBar extends StatelessWidget {
             size: 20.0,
           ),
         ),
-        Image(image: AssetImage('assets/chat.png'),
-        height: 32.0,
-          width: 32.0,
+        Image(image: AssetImage('assets/chat-jpg'),
+        height: 36.0,
+          width: 36.0,
         )
 
       ],
