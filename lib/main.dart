@@ -26,15 +26,11 @@ class DigicelAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       // elevation: 0.0,
-      title: Row(
-        children: [
-          SvgPicture.asset(
-            'assets/mydigicel.svg',
+      title:
+          SvgPicture.asset('assets/mydigicel.svg',
             height: 20.0,
-            width: 20.0,
           ),
-        ],
-      ),
+
       actions: [
         IconButton(
           onPressed: () {},
