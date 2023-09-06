@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-void main() => runApp(MaterialApp(
+void main() => runApp(const MaterialApp(
   home: Home(),
 ));
 
@@ -10,9 +10,9 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(36.0),
+        preferredSize: Size.fromHeight(40.0), // Increase preferredSize height to accommodate the app bar content
         child: DigicelAppBar(),
       ),
     );
@@ -31,13 +31,14 @@ class DigicelAppBar extends StatelessWidget {
           SvgPicture.asset(
             'assets/mydigicel.svg',
             height: 20.0,
+            width: 20.0,
           ),
         ],
       ),
       actions: [
         IconButton(
           onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
             Icons.notifications_none_rounded,
             color: Color(0xFFB0B0B0),
             size: 20.0,
@@ -45,17 +46,17 @@ class DigicelAppBar extends StatelessWidget {
         ),
         IconButton(
           onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
             Icons.location_on_outlined,
             color: Color(0xFFB0B0B0),
             size: 20.0,
           ),
         ),
-        Image(image: AssetImage('assets/chat-jpg'),
-        height: 36.0,
+        Image.asset(
+          'assets/chat.jpg', // Changed the asset path to 'chat.jpg'
+          height: 36.0,
           width: 36.0,
-        )
-
+        ),
       ],
       backgroundColor: Colors.white,
     );
