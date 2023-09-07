@@ -14,6 +14,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   String greetings = "";
+  String firstName = "Theodore";
+  String phoneNumber = "1876""2818357";
+  double callCredit = 10.76;
+  String expiryDate = '28/11/2023';
 
   @override
   void initState() {
@@ -53,7 +57,7 @@ class _HomeState extends State<Home> {
         preferredSize: Size.fromHeight(40.0),
         child: DigicelAppBar(),
       ),
-      body: Padding(
+      body: Container(
         padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
         child: Column(
           children: [
@@ -62,35 +66,229 @@ class _HomeState extends State<Home> {
               crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.alphabetic,
               children: [
-                 Text(
-                    greetings,
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF2c2d67),
-                    ),
+                Text(
+                  greetings,
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF2c2d67),
                   ),
-
+                ),
                 Spacer(),
-               Text(
-                    'Manage Accounts',
-                    style: TextStyle(
-                      color: Color(0xFF2c2d67),
-                      decoration: TextDecoration.underline,
-                      fontSize: 12.0,
-                      fontWeight: FontWeight.w600,
-                    ),
+                Text(
+                  'Manage Accounts',
+                  style: TextStyle(
+                    color: Color(0xFF2c2d67),
+                    decoration: TextDecoration.underline,
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.w600,
                   ),
-
+                ),
               ],
             ),
+
+            // User Container
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              margin: EdgeInsets.symmetric(vertical: 12.0),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  // Row 1 of Card with username
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 8.0),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.account_circle_outlined,
+                          size: 60.0,
+                          color: Color(0xFFa8a4c3),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "$firstName ...",
+                              style: TextStyle(
+                                color: Color(0xFF2c2d67),
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 0.0),
+                              child: Text(
+                                phoneNumber,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12.0,
+                                  color: Color(0xFFa8a4c3),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        const Spacer(),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                              "Prepaid",
+                              style: TextStyle(
+                                color: Color(0xFF2c2d67),
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 0.0),
+                              child: Text(
+                                "One Rate",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFFa8a4c3),
+                                ),
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  // Credit
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text("$callCredit JMD",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22.0,
+                        color: Color(0xFF2c2d67),
+                      ),
+                      )
+                    ],
+                  ),
+                  // Expires
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 12.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text("Expires On $expiryDate",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.0,
+                            color: Color(0xFFa8a4c3),
+                          ),
+                        )
+                      ],
+                    ),
+
+                  ),
+                  // Button
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Activity Button
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {
+                            // Add your onTap action here
+                          },
+                          child: Container(
+                            height: 36.0,
+                            padding: EdgeInsets.all(4.0),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                  colors: [Colors.purple,Colors.red]
+                              ),
+                              // Set your desired background color here
+                              borderRadius: BorderRadius.circular(20.0), // Set the desired border radius
+                            ),
+
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white, // Set your desired background color here
+                                borderRadius: BorderRadius.circular(20.0), // Set the desired border radius
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Activity',
+                                    style: TextStyle(
+                                      color: Color(0xFF2c2d67), // Set the text color to white
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 15.0), // Add some space between buttons
+                      //Top up Button
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {
+                            // Add your onTap action here
+                          },
+                          child: Container(
+                            height: 36.0,
+                            padding: EdgeInsets.all(4.0),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [Colors.purple,Colors.red]
+                              ),
+                              // Set your desired background color here
+                              borderRadius: BorderRadius.circular(20.0), // Set the desired border radius
+                            ),
+
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white, // Set your desired background color here
+                                borderRadius: BorderRadius.circular(20.0), // Set the desired border radius
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Top up',
+                                    style: TextStyle(
+                                      color: Color(0xFF2c2d67), // Set the text color to white
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+
+
+                    ],
+                  )
+
+                ],
+              ),
+            )
           ],
         ),
       ),
     );
   }
 }
-
 
 // AppBar
 class DigicelAppBar extends StatelessWidget {
